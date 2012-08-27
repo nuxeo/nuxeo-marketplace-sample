@@ -93,7 +93,7 @@
 
     <zip destfile="${outdir}/${maven.project.artifactId}-${marketplace.sample.version}-resources.zip"
          basedir="${outdir}/template-sample" />
-    <artifact:attach file="${outdir}/${maven.project.artifactId}-${maven.project.version}-resources.zip"
+    <artifact:attach file="${outdir}/${maven.project.artifactId}-${marketplace.sample.version}-resources.zip"
                      target="${maven.project.groupId}:${maven.project.artifactId}"
                      type="zip"
                      classifier="resources" />
