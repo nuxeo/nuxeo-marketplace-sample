@@ -101,8 +101,8 @@ There are multiple ways to build a Marketplace Package. We only look here at tho
     recommended/
     |-- install
     |   |-- artifacts-sample.properties
-    |   |-- lib
-    |   |   `-- nuxeo-sample-project-5.7-SNAPSHOT.jar
+    |   |-- bundles
+    |   |   `-- The sample project bundle.
     |   |-- templates
     |   |   `-- sample
     |   `-- test-artifacts-sample.properties
