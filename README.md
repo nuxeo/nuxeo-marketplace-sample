@@ -24,25 +24,19 @@ The functional tests are using [org.nuxeo:nuxeo-ftest](https://github.com/nuxeo/
 
     .
     |-- README.md
-    |-- ear                                 * EAR like archive of the new distribution
-    |   |-- pom.xml
-    |   `-- src
-    |       `-- main
-    |           |-- assemble
-    |           |   `-- assembly.xml          ** EAR assembly
-    |           `-- resources                 ** Optional template resource
-    |               `-- sample
-    |                   `-- nuxeo.defaults
-    |
-    |-- marketplace explicit                * Marketplace Package — explicit solution
-    |-- marketplace noear                   * Marketplace Package — no EAR solution
-    |-- marketplace                         * Marketplace Package — recommended solution
+    |-- marketplace explicit                * Marketplace Package - explicit solution
+    |-- marketplace noear                   * Marketplace Package - no EAR solution
+    |-- marketplace                         * Marketplace Package - recommended solution
     |   |-- pom.xml
     |   |-- src
     |   |   `-- main
     |   |       |-- assemble
     |   |       |   `-- assembly.xml          ** MP assembly
     |   |       `-- resources
+    |   |           |-- install
+    |   |           |   `-- templates
+    |   |           |       `-- sample        ** Sample configuration template
+    |   |           |           `-- nuxeo.defaults
     |   |           |-- install.xml           ** MP install instructions
     |   |           `-- package.xml           ** MP description
     |   `-- target                            ** Output directory with MP ZIP
