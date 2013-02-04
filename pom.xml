@@ -29,7 +29,7 @@
       <modules>
         <module>ftest/webdriver</module>
         <module>ftest/selenium</module>
-        <module>ftest/funkload</module>
+        <!-- <module>ftest/funkload</module> -->
         <!-- <module>ftest/cmis</module> -->
       </modules>
     </profile>
