@@ -24,8 +24,8 @@ The functional tests are using [org.nuxeo:nuxeo-ftest](https://github.com/nuxeo/
 
     .
     |-- README.md
-    |-- marketplace explicit                * Marketplace Package - explicit solution
-    |-- marketplace noear                   * Marketplace Package - no EAR solution
+    |-- marketplace-explicit                * Marketplace Package - explicit solution
+    |-- marketplace-nonxr                   * Marketplace Package - no NXR solution
     |-- marketplace                         * Marketplace Package - recommended solution
     |   |-- pom.xml
     |   |-- src
@@ -76,11 +76,11 @@ There are multiple ways to build a Marketplace Package. We only look here at tho
 
  * Recommended method
 
-   The recommended method is to build an EAR corresponding to the wanted result after the package install. Then we operate a comparison ("diff") between that product and a reference one (usually the Nuxeo CAP) and generate the Marketplace Package which will perform the wanted install. That method is the better one since it will always be up-to-date in regards to the dependencies and requirements (other bundles and third-party libraries). The drawback is it takes some build time and has a dependency on a whole Nuxeo distribution.
+   The recommended method is to build an NXR corresponding to the wanted result after the package install. Then we operate a comparison ("diff") between that product and a reference one (usually the Nuxeo CAP) and generate the Marketplace Package which will perform the wanted install. That method is the better one since it will always be up-to-date in regards to the dependencies and requirements (other bundles and third-party libraries). The drawback is it takes some build time and has a dependency on a whole Nuxeo distribution.
 
- * No-EAR method.
+ * No-NXR method.
 
-   That method is using the same principle for building the Marketplace Package as for building an EAR. It is as much reliable regarding at the dependencies as the above recommended method. The drawback is since the solution is empiric, it will likely embed useless files and generate a bigger archive.
+   That method is using the same principle for building the Marketplace Package as for building an NXR. It is as much reliable regarding at the dependencies as the above recommended method. The drawback is since the solution is empiric, it will likely embed useless files and generate a bigger archive.
 
  * Explicit method.
 
@@ -106,11 +106,11 @@ There are multiple ways to build a Marketplace Package. We only look here at tho
 The `lib` directory is empty because all required third-parties are already included in the basic Nuxeo distribution.
 The `bundles` directory only contains the sample project bundle because all its dependencies are also already included in the basic distribution.
 
- * No-EAR method.
+ * No-NXR method.
 
 5 directories, 150 files, 33MB.
 
-    noear/
+    nonxr/
     |-- install
     |   |-- artifacts-sample.properties
     |   |-- bundles
@@ -140,5 +140,5 @@ Here, we are embedding a lot of bundles and libraries which are useless because 
     |-- install.xml
     `-- package.xml
 
-That solution builds a lighter package than the No-EAR method but we don't know if it will be missing some dependencies or not. The embedded bundles and libraries list must be manually maintained.
+That solution builds a lighter package than the no-NXR method but we don't know if it will be missing some dependencies or not. The embedded bundles and libraries list must be manually maintained.
 

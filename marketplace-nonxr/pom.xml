@@ -8,9 +8,9 @@
     <relativePath>../pom.xml</relativePath>
   </parent>
 
-  <artifactId>marketplace-noear</artifactId>
+  <artifactId>marketplace-nonxr</artifactId>
   <packaging>zip</packaging>
-  <name>Marketplace package - no EAR build method</name>
+  <name>Marketplace package - no NXR build method</name>
 
   <dependencies>
     <dependency>

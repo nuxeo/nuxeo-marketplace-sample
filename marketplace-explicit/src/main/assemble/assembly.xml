@@ -24,7 +24,7 @@
       <!-- Your bundles -->
       <artifact:resolveFile key="org.nuxeo.sample:nuxeo-sample-project::jar" />
     </copy>
-    <!-- Whereas the marketplace build using an EAR is automatically downloading the
+    <!-- Whereas the marketplace build using an NXR is automatically downloading the
     required libraries, that simpler solution requires you explicitly list them -->
     <copy todir="${outdir}/marketplace/install/lib">
       <!-- Some needed third-party libraries -->

@@ -19,7 +19,7 @@
 
   <modules>
     <module>marketplace-explicit</module>
-    <module>marketplace-noear</module>
+    <module>marketplace-nonxr</module>
     <module>marketplace</module>
   </modules>
 
@@ -39,7 +39,7 @@
     <dependencies>
       <dependency>
         <groupId>org.nuxeo.marketplace.sample</groupId>
-        <artifactId>ear</artifactId>
+        <artifactId>nxr</artifactId>
         <version>${marketplace.sample.version}</version>
         <type>zip</type>
       </dependency>
