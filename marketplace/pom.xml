@@ -47,7 +47,7 @@
 
     <!-- Additional bundles to be deployed by the MP -->
     <dependency>
-      <groupId>org.nuxeo.sample</groupId>
+      <groupId>nuxeo-sample-project</groupId>
       <artifactId>nuxeo-sample-project</artifactId>
     </dependency>
   </dependencies>

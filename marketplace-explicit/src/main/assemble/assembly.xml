@@ -22,7 +22,7 @@
 
     <copy todir="${outdir}/marketplace/install/bundles">
       <!-- Your bundles -->
-      <artifact:resolveFile key="org.nuxeo.sample:nuxeo-sample-project::jar" />
+      <artifact:resolveFile key="nuxeo-sample-project:nuxeo-sample-project::jar" />
     </copy>
     <!-- Whereas the marketplace build using an NXR is automatically downloading the
     required libraries, that simpler solution requires you explicitly list them -->

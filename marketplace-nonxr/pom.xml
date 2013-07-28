@@ -14,7 +14,7 @@
 
   <dependencies>
     <dependency>
-      <groupId>org.nuxeo.sample</groupId>
+      <groupId>nuxeo-sample-project</groupId>
       <artifactId>nuxeo-sample-project</artifactId>
     </dependency>
   </dependencies>
