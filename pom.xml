@@ -38,6 +38,11 @@
   <dependencyManagement>
     <dependencies>
       <dependency>
+        <groupId>org.nuxeo.sample</groupId>
+        <artifactId>nuxeo-sample-project</artifactId>
+        <version>${nuxeo.addons.version}</version>
+      </dependency>
+      <dependency>
         <groupId>org.nuxeo.marketplace.sample</groupId>
         <artifactId>nxr</artifactId>
         <version>${marketplace.sample.version}</version>
