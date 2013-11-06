@@ -15,7 +15,7 @@
     <copy todir="${outdir}/marketplace">
       <fileset dir="src/main/resources" />
       <filterset>
-        <filter token="VERSION" value="${marketplace.sample.version}" />
+        <filter token="VERSION" value="${maven.project.version}" />
         <filter token="DISTRIB_VERSION" value="${nuxeo.distribution.version}" />
       </filterset>
     </copy>
@@ -34,9 +34,9 @@
       <artifact:resolveFile key="org.hibernate:hibernate-validator::jar" />
     </copy>
 
-    <zip destfile="${outdir}/${maven.project.artifactId}-${marketplace.sample.version}.zip"
+    <zip destfile="${outdir}/${maven.project.artifactId}-${maven.project.version}.zip"
          basedir="${outdir}/marketplace" />
-    <artifact:attach file="${outdir}/${maven.project.artifactId}-${marketplace.sample.version}.zip"
+    <artifact:attach file="${outdir}/${maven.project.artifactId}-${maven.project.version}.zip"
                      target="${maven.project.groupId}:${maven.project.artifactId}"
                      type="zip" />
   </target>
