@@ -22,7 +22,7 @@
   <name>Marketplace package - no NXR build method</name>
 
   <properties>
-    <nuxeo.distribution.tools.version>1.15</nuxeo.distribution.tools.version>
+    <nuxeo.distribution.tools.version>2.0-SNAPSHOT</nuxeo.distribution.tools.version>
     <nuxeo.distribution.version>5.9.1-SNAPSHOT</nuxeo.distribution.version>
   </properties>
 
@@ -52,7 +52,7 @@
       <plugins>
         <plugin>
           <groupId>org.nuxeo.build</groupId>
-          <artifactId>nuxeo-distribution-tools</artifactId>
+          <artifactId>ant-assembly-maven-plugin</artifactId>
           <version>${nuxeo.distribution.tools.version}</version>
           <extensions>true</extensions>
         </plugin>
@@ -61,7 +61,7 @@
     <plugins>
       <plugin>
         <groupId>org.nuxeo.build</groupId>
-        <artifactId>nuxeo-distribution-tools</artifactId>
+        <artifactId>ant-assembly-maven-plugin</artifactId>
         <configuration>
           <buildFiles>
             <buildFile>${basedir}/src/main/assemble/assembly.xml</buildFile>
