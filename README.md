@@ -16,7 +16,7 @@ directly from the Nuxeo Admin Center (where the administrator will see a new pac
 Moreover, the Marketplace packaging system automatically maintains a bundles registry: you don't have anymore to know what files (especially the third-party libraries)
 must be added or removed to or from your server.
 
-The assemblies are using [org.nuxeo.build:nuxeo-distribution-tools](https://github.com/nuxeo/nuxeo-distribution-tools).
+The assemblies are using [org.nuxeo.build:ant-assembly-maven-plugin](https://github.com/nuxeo/ant-assembly-maven-plugin).
 
 The functional tests are using [org.nuxeo:nuxeo-ftest](https://github.com/nuxeo/tools-nuxeo-ftest).
 
@@ -70,21 +70,30 @@ The functional tests are using [org.nuxeo:nuxeo-ftest](https://github.com/nuxeo/
 ## About the three sample Marketplace Package solutions.
 
 There are multiple ways to build a Marketplace Package. We only look here at those using Maven and
-[org.nuxeo.build:nuxeo-distribution-tools](https://github.com/nuxeo/nuxeo-distribution-tools).
+[org.nuxeo.build:ant-assembly-maven-plugin](https://github.com/nuxeo/ant-assembly-maven-plugin).
 
 ### Here are three different solutions, from the better one to the quicker one
 
  * Recommended method
 
-   The recommended method is to build an NXR (NuXeo aRchive) corresponding to the wanted result after the package install. Then we operate a comparison ("diff") between that product and a reference one (usually the Nuxeo CAP) and generate the Marketplace Package which will perform the wanted install. That method is the better one since it will always be up-to-date in regards to the dependencies and requirements (other bundles and third-party libraries). The drawback is it takes some build time and has a dependency on a whole Nuxeo distribution.
+   The recommended method is to build an NXR (NuXeo aRchive) corresponding to the wanted result after the package install.
+   Then we operate a comparison ("diff") between that product and a reference one (usually the Nuxeo CAP) and generate
+   the Marketplace Package which will perform the wanted install. That method is the better one since it will always be
+   up-to-date in regards to the dependencies and requirements (other bundles and third-party libraries).
+   The drawback is it takes some build time and has a dependency on a whole Nuxeo distribution.
 
  * No-NXR method.
 
-   That method is using the same principle for building the Marketplace Package as for building an NXR. It is as much reliable regarding at the dependencies as the above recommended method. The drawback is since the solution is empiric, it will likely embed useless files and generate a bigger archive.
+   That method is using the same principle for building the Marketplace Package as for building an NXR.
+   It is as much reliable regarding at the dependencies as the above recommended method. The drawback is since the solution
+   is empiric, it will likely embed useless files and generate a bigger archive.
 
  * Explicit method.
 
-   That latest method is explicitly listing everything that must be packaged. Easy to write and very quick at build time, it requires more maintenance than the two above since you have to manually update the package assembly every time the dependencies change. You also risk not to see that an indirect dependency has changed and requires some changes on the third-party libraries. That method is not recommended except for specific cases or for a proof of concept.
+   That latest method is explicitly listing everything that must be packaged. Easy to write and very quick at build time,
+   it requires more maintenance than the two above since you have to manually update the package assembly every time the
+   dependencies change. You also risk not to see that an indirect dependency has changed and requires some changes on the
+   third-party libraries. That method is not recommended except for specific cases or for a proof of concept.
 
 ### Applied to the sample project, here are the results from those three methods.
 
@@ -103,8 +112,9 @@ There are multiple ways to build a Marketplace Package. We only look here at tho
     |-- install.xml
     `-- package.xml
 
-The `lib` directory is empty because all required third-parties are already included in the basic Nuxeo distribution.
-The `bundles` directory only contains the sample project bundle because all its dependencies are also already included in the basic distribution.
+The `lib` directory is empty because all required third-parties are already included in the basic Nuxeo distribution.  
+The `bundles` directory only contains the sample project bundle because all its dependencies are also already included
+in the basic distribution.
 
  * No-NXR method.
 
@@ -123,7 +133,8 @@ The `bundles` directory only contains the sample project bundle because all its 
     |-- install.xml
     `-- package.xml
 
-Here, we are embedding a lot of bundles and libraries which are useless because already included in the basic Nuxeo distribution but that cannot be detected by the build process.
+Here, we are embedding a lot of bundles and libraries which are useless because already included in the basic Nuxeo
+distribution but that cannot be detected by the build process.
 
  * Explicit method.
 
@@ -140,5 +151,6 @@ Here, we are embedding a lot of bundles and libraries which are useless because 
     |-- install.xml
     `-- package.xml
 
-That solution builds a lighter package than the no-NXR method but we don't know if it will be missing some dependencies or not. The embedded bundles and libraries list must be manually maintained.
+That solution builds a lighter package than the no-NXR method but we don't know if it will be missing some dependencies
+or not. The embedded bundles and libraries list must be manually maintained.
 
