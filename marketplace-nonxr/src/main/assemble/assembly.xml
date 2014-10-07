@@ -6,13 +6,8 @@
   <taskdef resource="org/nuxeo/build/artifact/antlib.xml"
            uri="urn:nuxeo-artifact" />
 
-  <target name="init" unless="init.done">
+  <target name="build" description="Build Nuxeo sample Marketplace package">
     <property name="outdir" value="${maven.project.build.directory}" />
-    <antcall target="expand" />
-    <property name="init.done" value="true" />
-  </target>
-
-  <target name="expand">
     <!-- Include your artifacts in the graph adding your groupId to groupPrefixes -->
     <artifact:nuxeo-expand includeTestScope="true"
                            groupPrefixes="org.nuxeo,com.nuxeo" />
@@ -23,12 +18,8 @@
                     scopes="test" />
     <!-- Prints the graph for debugging purpose -->
     <artifact:print output="${outdir}/dependency-tree.log" />
-  </target>
-
-  <target name="build"
-          depends="init"
-          description="Build Nuxeo sample Marketplace package">
     <tstamp />
+
     <delete failonerror="false" dir="${outdir}/marketplace" />
     <mkdir dir="${outdir}/marketplace" />
     <copy todir="${outdir}/marketplace">
@@ -39,6 +30,7 @@
       </filterset>
     </copy>
 
+    <!-- Nuxeo bundles -->
     <copy todir="${outdir}/marketplace/install/bundles" overwrite="true">
       <artifact:set>
         <includes>
@@ -46,10 +38,25 @@
           <!-- Include your artifacts using their groupId for instance -->
           <artifact groupId="com.nuxeo*" scope="!test" type="!pom" />
         </includes>
+        <excludes>
+          <artifact groupId="org.nuxeo.lib*" />
+        </excludes>
       </artifact:set>
     </copy>
-
-    <antcall target="third-party-libraries" />
+    <!-- Third-party libraries -->
+    <copy todir="${outdir}/marketplace/install/lib" overwrite="true">
+      <artifact:set>
+        <includes>
+          <artifact groupId="!org.nuxeo*" scope="!test" />
+          <artifact groupId="org.nuxeo.lib*" scope="!test" />
+        </includes>
+        <excludes>
+          <!-- Filter out your artifacts using their groupId for instance -->
+          <artifact groupId="com.nuxeo*" />
+        </excludes>
+      </artifact:set>
+    </copy>
+    <nx:rmdups dir="${outdir}/marketplace/install/lib" />
 
     <copy file="${outdir}/artifacts-sample.properties"
           todir="${outdir}/marketplace/install" />
@@ -60,27 +67,6 @@
          basedir="${outdir}/marketplace" />
     <artifact:attach file="${outdir}/${maven.project.artifactId}-${maven.project.version}.zip"
                      type="zip" />
-  </target>
-
-  <target name="third-party-libraries">
-    <copy todir="${outdir}/marketplace/install/lib" overwrite="true">
-      <artifact:set>
-        <includes>
-          <artifact groupId="!org.nuxeo*" scope="!test" />
-        </includes>
-        <excludes>
-          <!-- Filter out your artifacts using their groupId for instance -->
-          <artifact groupId="com.nuxeo*" />
-        </excludes>
-      </artifact:set>
-    </copy>
-    <move todir="${outdir}/marketplace/install/lib">
-      <fileset dir="${outdir}/marketplace/install/bundles">
-        <include name="nuxeo-generic-wss-front*" />
-        <include name="nuxeo-generic-wss-handler*" />
-      </fileset>
-    </move>
-    <nx:rmdups dir="${outdir}/marketplace/install/lib" />
   </target>
 
 </project>
