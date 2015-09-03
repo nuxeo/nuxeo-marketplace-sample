@@ -21,16 +21,16 @@
 
     <copy todir="${outdir}/marketplace/install/bundles">
       <!-- Your bundles -->
-      <artifact:resolveFile key="org.nuxeo.sample:nuxeo-sample-project::jar" />
+      <artifact:file key="org.nuxeo.sample:nuxeo-sample-project" />
     </copy>
     <!-- Whereas the marketplace build using an NXR is automatically downloading the
     required libraries, that simpler solution requires you explicitly list them -->
     <copy todir="${outdir}/marketplace/install/lib">
       <!-- Some needed third-party libraries -->
-      <artifact:resolveFile key="javax.faces:jsf-api::jar" />
-      <artifact:resolveFile key="org.jboss.seam:jboss-seam::jar" />
-      <artifact:resolveFile key="org.jboss.seam:jboss-seam-remoting::jar" />
-      <artifact:resolveFile key="org.hibernate:hibernate-validator::jar" />
+      <artifact:resolveFile key="javax.faces:jsf-api" />
+      <artifact:resolveFile key="org.jboss.seam:jboss-seam" />
+      <artifact:resolveFile key="org.jboss.seam:jboss-seam-remoting" />
+      <artifact:resolveFile key="org.hibernate:hibernate-validator" />
     </copy>
 
     <zip destfile="${outdir}/${maven.project.artifactId}-${maven.project.version}.zip"
