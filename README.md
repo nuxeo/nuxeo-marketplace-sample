@@ -167,14 +167,22 @@ See [CORG/Compiling Nuxeo from sources](http://doc.nuxeo.com/x/xION)
 [![Build Status](https://qa.nuxeo.org/jenkins/buildStatus/icon?job=addons_FT_nuxeo-sample-project-master)](https://qa.nuxeo.org/jenkins/job/addons_FT_nuxeo-sample-project-master/)
 
 ## Deploying
- 
-Install [the Sample Marketplace Package](https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-sample).  
+
+This if of very little interest but you can still install [the Sample Marketplace Package](https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-sample).  
+
+The purposed of that repository is to provide easy to copy/paste samples of Marketplace Package assembly and automated functional testing:
+
+1. Copy the whole structure.
+2. Choose the assembly method and the testing framework(s) you will use and clean up the unused code.
+3. Take care to replace all sample occurences with your real case.
+4. If you cannot inherit from `org.nuxeo:nuxeo-ecm` (or any child such as `org.nuxeo.ecm.distribution:nuxeo-distribution`), then refer to the `XXX-INHERITANCE` comments.
+
 # Resources
  
 ## Documentation
 
-[NXDOC/Creating Marketplace Packages](https://doc.nuxeo.com/x/CwIz)
-[CORG/Creating Your Own Distribution](https://doc.nuxeo.com/x/BIAO)
+[NXDOC/Creating Marketplace Packages](https://doc.nuxeo.com/x/CwIz)  
+[CORG/Creating Your Own Distribution](https://doc.nuxeo.com/x/BIAO)  
 [GLOS/NXR](https://doc.nuxeo.com/x/2ACw)
  
 ## Reporting issues
