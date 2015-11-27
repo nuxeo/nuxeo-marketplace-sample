@@ -9,7 +9,7 @@
 
   <artifactId>marketplace-nonxr</artifactId>
   <packaging>zip</packaging>
-  <name>Marketplace package - no NXR build method</name>
+  <name>Nuxeo Package - no NXR build method</name>
 
   <!-- Bundles to be deployed by the MP -->
   <dependencies>

@@ -10,7 +10,7 @@
   <groupId>org.nuxeo.marketplace.sample</groupId>
   <artifactId>parent</artifactId>
   <packaging>pom</packaging>
-  <name>Nuxeo Marketplace packaging samples</name>
+  <name>Nuxeo packaging samples</name>
   <description>Convenience POM for running sub-modules</description>
   <version>2.3.0-SNAPSHOT</version>
 

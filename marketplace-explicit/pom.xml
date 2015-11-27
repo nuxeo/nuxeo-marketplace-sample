@@ -10,7 +10,7 @@
 
   <artifactId>marketplace-explicit</artifactId>
   <packaging>zip</packaging>
-  <name>Marketplace package - explicit build method</name>
+  <name>Nuxeo Package - explicit build method</name>
 
   <dependencies>
     <!-- Additional bundles to be deployed by the MP -->

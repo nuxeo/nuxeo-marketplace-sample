@@ -1,14 +1,14 @@
 # Introduction
 
-Sample Maven modules for building Nuxeo Marketplace Packages.
+Sample Maven modules for building Nuxeo Packages for the [Nuxeo Marketplace](http://marketplace.nuxeo.com/).
 
-Those sample MP (Marketplace Packages) will deploy the [nuxeo-sample-project](https://github.com/nuxeo/nuxeo-sample-project/) into a Nuxeo CAP.
+Those sample MP ("Nuxeo Packages", formerly called "Marketplace Packages") will deploy the [nuxeo-sample-project](https://github.com/nuxeo/nuxeo-sample-project/) into a Nuxeo CAP.
 
-The Marketplace Package is a powerful packaging system when extending Nuxeo.
+The Nuxeo Package is a powerful packaging system when extending Nuxeo.
 
-It improves your development process (for instance by allowing you to better automate the integration tests) but it also greatly improves the deployment process. For instance, with a Marketplace Package you can easily send upgrades to your production team either as a ZIP, either directly within the server Administration page (where the administrator will see if a new package is available).
+It improves your development process (for instance by allowing you to better automate the integration tests) but it also greatly improves the deployment process. For instance, with a Nuxeo Package you can easily send upgrades to your production team either as a ZIP, either directly within the server Administration page (where the administrator will see if a new package is available).
 
-Moreover, the Marketplace packaging system automatically maintains a bundles registry: you don't have anymore to know what files (especially the third-party libraries) must be added or removed to or from your server.
+Moreover, the Nuxeo packaging system automatically maintains a bundles registry: you don't have anymore to track which files (especially the third-party libraries) must be added (or removed) to (or from) your server.
 
 The assemblies are using [org.nuxeo.build:ant-assembly-maven-plugin](https://github.com/nuxeo/ant-assembly-maven-plugin).
 
@@ -18,9 +18,9 @@ The functional tests are using [org.nuxeo:nuxeo-ftest](https://github.com/nuxeo/
 
     .
     |-- README.md
-    |-- marketplace-explicit                * Marketplace Package - explicit solution
-    |-- marketplace-nonxr                   * Marketplace Package - no NXR solution
-    |-- marketplace                         * Marketplace Package - recommended solution
+    |-- marketplace-explicit                * Nuxeo Package - explicit solution
+    |-- marketplace-nonxr                   * Nuxeo Package - no NXR solution
+    |-- marketplace                         * Nuxeo Package - recommended solution
     |   |-- pom.xml
     |   |-- src
     |   |   `-- main
@@ -61,16 +61,16 @@ The functional tests are using [org.nuxeo:nuxeo-ftest](https://github.com/nuxeo/
     |                   `-- log4j.xml
     `-- pom.xml
 
-## About the three sample Marketplace Package solutions
+## About the three sample Nuxeo Package solutions
 
-There are multiple ways to build a Marketplace Package. We only look here at those using Maven and
+There are multiple ways to build a Nuxeo Package. We only look here at those using Maven and
 [org.nuxeo.build:ant-assembly-maven-plugin](https://github.com/nuxeo/ant-assembly-maven-plugin).
 
-Here are three different solutions, from the better one to the quicker one
+Here are three different solutions, from the recommended one to the simplest one.
 
 ### NXR method (recommended)
 
-The recommended method is to build an NXR corresponding to the wanted result after the package install. Then we operate a comparison between that product and a reference one (usually the Nuxeo CAP), and we finally generate the Marketplace Package which will perform the wanted install.
+The recommended method is to build an NXR corresponding to the wanted result after the package install. Then we operate a comparison between that product and a reference one (usually the Nuxeo CAP), and we finally generate the Nuxeo Package which will perform the wanted install.
 
 * PROS
   * Always up-to-date in regards to the dependencies and requirements (other bundles and third-party libraries).
@@ -85,7 +85,7 @@ The recommended method is to build an NXR corresponding to the wanted result aft
 
 ### No-NXR method
 
-That method is using the same principle for building the Marketplace Package as for building an NXR, with no final optimization. It is an acceptable compromise between speed and quality.
+That method is using the same principle for building the Nuxeo Package as for building an NXR, with no final optimization. It is an acceptable compromise between speed and quality.
 
 * PROS
   * It is as much reliable regarding at the dependencies as the above recommended method.
@@ -182,9 +182,9 @@ See [CORG/Compiling Nuxeo from sources](http://doc.nuxeo.com/x/xION)
 
 ## Deploying
 
-This if of very little interest but you can still install [the Sample Marketplace Package](https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-sample).
+This if of very little interest but you can still install [the Sample Nuxeo Package](https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-sample).
 
-The purposed of that repository is to provide easy to copy/paste samples of Marketplace Package assembly and automated functional testing:
+The purposed of that repository is to provide easy to copy/paste samples of Nuxeo Package assembly and automated functional testing:
 
 1. Copy the whole structure.
 2. Choose the assembly method and the testing framework(s) you will use and clean up the unused code.
