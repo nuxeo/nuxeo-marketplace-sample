@@ -41,6 +41,29 @@ The functional tests are using [org.nuxeo:nuxeo-ftest](https://github.com/nuxeo/
     |   |   |-- pom.xml
     |   |   `-- README.txt
     |   |
+    |   |-- gatling                         * Performance tests with Gatling
+    |   |   |-- itests.xml
+    |   |   |-- pom.xml
+    |   |   |-- README.md
+    |   |   `-- src
+    |   |       `-- test                      ** Scala and resources test files
+    |   |           |-- resources
+    |   |           |   |-- data
+    |   |           |   |   |-- admins.csv
+    |   |           |   |   `-- gatling-users.csv
+    |   |           |   |-- gatling.conf
+    |   |           |   `-- logback.xml
+    |   |           `-- scala
+    |   |               `-- org
+    |   |                   `-- nuxeo
+    |   |                       `-- sample
+    |   |                           `-- gatling
+    |   |                                `-- Feeders.scala
+    |   |                                `-- RestClient.scala
+    |   |                                `-- Sim00Setup.scala
+    |   |                                `-- Sim10CreateDocuments.scala
+    |   |                                `-- Sim20Cleanup.scala
+    |   |
     |   |-- selenium                        * Functional tests with Selenium
     |   |   |-- itests.xml
     |   |   |-- pom.xml

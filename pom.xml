@@ -34,6 +34,7 @@
         <module>ftest/webdriver</module>
         <module>ftest/selenium</module>
         <module>ftest/funkload</module>
+        <module>ftest/gatling</module>
         <!-- <module>ftest/cmis</module> -->
       </modules>
     </profile>
