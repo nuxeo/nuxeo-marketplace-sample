@@ -25,20 +25,12 @@
     <module>marketplace-explicit</module>
     <module>marketplace-nonxr</module>
     <module>marketplace</module>
+    <module>ftest/startup</module>
+    <module>ftest/webdriver</module>
+    <module>ftest/funkload</module>
+    <module>ftest/gatling</module>
+    <!-- <module>ftest/cmis</module> -->
   </modules>
-
-  <profiles>
-    <profile>
-      <id>ftest</id>
-      <modules>
-        <module>ftest/webdriver</module>
-        <module>ftest/selenium</module>
-        <module>ftest/funkload</module>
-        <module>ftest/gatling</module>
-        <!-- <module>ftest/cmis</module> -->
-      </modules>
-    </profile>
-  </profiles>
 
   <dependencyManagement>
     <dependencies>
