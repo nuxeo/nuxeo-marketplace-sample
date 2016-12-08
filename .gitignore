@@ -21,3 +21,6 @@ target
 *.gpd.*
 *cpJar*
 dependency-tree.log
+node_modules
+reports
+screenshots
