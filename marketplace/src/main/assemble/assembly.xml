@@ -43,6 +43,7 @@
         </includes>
         <excludes>
           <artifact groupId="org.nuxeo.lib*" />
+          <artifact groupId="org.nuxeo.build*" />
           <artifact scope="test" />
           <artifact scope="provided" />
           <artifact type="pom" />
