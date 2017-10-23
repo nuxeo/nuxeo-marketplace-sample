@@ -58,6 +58,10 @@
     <copy file="${outdir}/artifacts-sample.properties" todir="${outdir}/marketplace/install" />
     <copy file="${outdir}/test-artifacts-sample.properties" todir="${outdir}/marketplace/install" />
 
+    <nx:studioExtraction todir="${outdir}/marketplace">
+      <fileset dir="${outdir}/marketplace/install/bundles"/>
+    </nx:studioExtraction>
+
     <zip destfile="${outdir}/${maven.project.artifactId}-${maven.project.version}.zip"
          basedir="${outdir}/marketplace" />
     <artifact:attach file="${outdir}/${maven.project.artifactId}-${maven.project.version}.zip" type="zip" />
