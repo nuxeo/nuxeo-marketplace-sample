@@ -50,7 +50,7 @@ class Sim10CreateDocuments extends Simulation {
     .disableWarmUp
     .acceptEncodingHeader("gzip, deflate")
     .acceptEncodingHeader("identity")
-    .connection("keep-alive")
+    .connectionHeader("keep-alive")
 
   val scn = CreateDocuments.get(Parameters.getSimulationDuration(60), Parameters.getPause(1000))
 

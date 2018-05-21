@@ -50,7 +50,7 @@ class Sim20Cleanup extends Simulation {
     .baseURL(Parameters.getBaseUrl())
     .disableWarmUp
     .acceptEncodingHeader("gzip, deflate")
-    .connection("keep-alive")
+    .connectionHeader("keep-alive")
 
   val userCount = Source.fromFile(GatlingFiles.dataDirectory + "/gatling-users.csv").getLines.size - 1
   val scn = Cleanup.get(userCount)
