@@ -1,7 +1,0 @@
-#
-
-# The nuxeo admin group
-admin:Administrator
-
-# members group
-members:user1

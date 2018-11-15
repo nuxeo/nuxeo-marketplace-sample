@@ -36,11 +36,6 @@ The functional tests are using [org.nuxeo:nuxeo-ftest](https://github.com/nuxeo/
     |   `-- target                            ** Output directory with MP ZIP
     |
     |-- ftest
-    |   |-- funkload                        * Functional or performance tests with Funkload
-    |   |   |-- itests.xml
-    |   |   |-- pom.xml
-    |   |   `-- README.txt
-    |   |
     |   |-- gatling                         * Performance tests with Gatling
     |   |   |-- itests.xml
     |   |   |-- pom.xml

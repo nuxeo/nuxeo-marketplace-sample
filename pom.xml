@@ -27,7 +27,6 @@
     <module>marketplace</module>
     <module>ftest/startup</module>
     <module>ftest/webdriver</module>
-    <module>ftest/funkload</module>
     <module>ftest/gatling</module>
     <!-- <module>ftest/cmis</module> -->
   </modules>
