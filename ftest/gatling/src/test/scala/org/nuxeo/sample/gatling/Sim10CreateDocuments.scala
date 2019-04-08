@@ -1,7 +1,5 @@
-package org.nuxeo.sample.gatling
-
 /*
- * (C) Copyright 2016 Nuxeo SA (http://nuxeo.com/) and others.
+ * (C) Copyright 2016-2019 Nuxeo (http://nuxeo.com/) and others.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,6 +17,7 @@ package org.nuxeo.sample.gatling
  *     Benoit Delbosc
  *     Antoine Taillefer
  */
+package org.nuxeo.sample.gatling
 
 import io.gatling.core.Predef._
 import io.gatling.http.Predef._
@@ -46,7 +45,7 @@ object CreateDocuments {
 class Sim10CreateDocuments extends Simulation {
 
   val httpProtocol = http
-    .baseURL(Parameters.getBaseUrl())
+    .baseUrl(Parameters.getBaseUrl())
     .disableWarmUp
     .acceptEncodingHeader("gzip, deflate")
     .acceptEncodingHeader("identity")
@@ -54,7 +53,7 @@ class Sim10CreateDocuments extends Simulation {
 
   val scn = CreateDocuments.get(Parameters.getSimulationDuration(60), Parameters.getPause(1000))
 
-  setUp(scn.inject(rampUsers(Parameters.getConcurrentUsers(10)).over(Parameters.getRampDuration(5))).exponentialPauses)
+  setUp(scn.inject(rampUsers(Parameters.getConcurrentUsers(10)).during(Parameters.getRampDuration(5))).exponentialPauses)
     .protocols(httpProtocol)
     .assertions(global.successfulRequests.percent.is(100))
 }
