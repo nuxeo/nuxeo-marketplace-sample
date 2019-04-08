@@ -1,7 +1,5 @@
-package org.nuxeo.sample.gatling
-
 /*
- * (C) Copyright 2016 Nuxeo SA (http://nuxeo.com/) and others.
+ * (C) Copyright 2016 Nuxeo-2019 (http://nuxeo.com/) and others.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,6 +17,7 @@ package org.nuxeo.sample.gatling
  *     Benoit Delbosc
  *     Antoine Taillefer
  */
+package org.nuxeo.sample.gatling
 
 import io.gatling.core.Predef._
 import io.gatling.core.config.GatlingFiles
@@ -47,12 +46,12 @@ object Cleanup {
 class Sim20Cleanup extends Simulation {
 
   val httpProtocol = http
-    .baseURL(Parameters.getBaseUrl())
+    .baseUrl(Parameters.getBaseUrl())
     .disableWarmUp
     .acceptEncodingHeader("gzip, deflate")
     .connectionHeader("keep-alive")
 
-  val userCount = Source.fromFile(GatlingFiles.dataDirectory + "/gatling-users.csv").getLines.size - 1
+  val userCount = Source.fromFile(GatlingFiles.resourcesDirectory + "/data/gatling-users.csv").getLines.size - 1
   val scn = Cleanup.get(userCount)
 
   setUp(scn.inject(atOnceUsers(1))).protocols(httpProtocol)
