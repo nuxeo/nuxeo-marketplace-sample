@@ -48,7 +48,7 @@
         <groupId>io.gatling</groupId>
         <artifactId>gatling-maven-plugin</artifactId>
         <configuration>
-          <dataFolder>src/test/resources/data</dataFolder>
+          <resourcesFolder>src/test/resources/data</resourcesFolder>
           <resultsFolder>target/gatling/results</resultsFolder>
           <simulationsFolder>src/test/scala</simulationsFolder>
         </configuration>
@@ -56,7 +56,7 @@
           <execution>
             <id>setup</id>
             <goals>
-              <goal>integration-test</goal>
+              <goal>test</goal>
             </goals>
             <configuration>
               <simulationClass>org.nuxeo.sample.gatling.Sim00Setup</simulationClass>
@@ -65,7 +65,7 @@
           <execution>
             <id>create-documents</id>
             <goals>
-              <goal>integration-test</goal>
+              <goal>test</goal>
             </goals>
             <configuration>
               <simulationClass>org.nuxeo.sample.gatling.Sim10CreateDocuments</simulationClass>
@@ -74,7 +74,7 @@
           <execution>
             <id>cleanup</id>
             <goals>
-              <goal>integration-test</goal>
+              <goal>test</goal>
             </goals>
             <configuration>
               <simulationClass>org.nuxeo.sample.gatling.Sim20Cleanup</simulationClass>
@@ -88,7 +88,7 @@
         <executions>
           <execution>
             <goals>
-              <goal>integration-test</goal>
+              <goal>test</goal>
               <goal>verify</goal>
             </goals>
           </execution>
