@@ -27,8 +27,8 @@ import org.nuxeo.cap.bench.Headers
 
 object Feeders {
 
-  val usersQueue = csv("gatling-users.csv").queue
-  val users = csv("gatling-users.csv").circular
-  val admins = csv("admins.csv").circular
+  val usersQueue = csv("data/gatling-users.csv").queue
+  val users = csv("data/gatling-users.csv").circular
+  val admins = csv("data/admins.csv").circular
 
 }
