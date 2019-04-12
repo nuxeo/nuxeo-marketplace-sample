@@ -48,7 +48,7 @@
         <groupId>io.gatling</groupId>
         <artifactId>gatling-maven-plugin</artifactId>
         <configuration>
-          <resourcesFolder>src/test/resources/data</resourcesFolder>
+          <resourcesFolder>src/test/resources</resourcesFolder>
           <resultsFolder>target/gatling/results</resultsFolder>
           <simulationsFolder>src/test/scala</simulationsFolder>
         </configuration>
